@@ -1,17 +1,15 @@
 import sys
 
-opcao = float(input("Escolha quais das funçoes voce quer utilizar \n [1] Sacar \n [2] Verificar o Extrato \n"))
-extrato = 250
-
+opcao = int(input("Escolha dentre as alternativas:\n [1]Verificar extrato \n [2]Saque"))
+extrato = 500
+limite = 300
 if opcao == 1:
-    saque = float(input("Qual valor o senhor(a) deseja sacar?"))
-    if saque <= extrato:
+    print("Seu extrato é de R$500,00")
+elif opcao == 2:
+    sacar = float(input("Qual valor deseja sacar?"))
+    if sacar <= extrato and sacar <= limite:
         print("Saque realizado")
     else:
-        print("Saldo insuficiente")
+        print("Saque indisponivel")
 
-elif opcao == 2:
-    print("Valor do seu extrato é",extrato)
-
-else:
-    sys.exit("Opçao invalida")
+else: sys.exit("opçao invalida")
